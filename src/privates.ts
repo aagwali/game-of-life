@@ -43,7 +43,11 @@ export const setNextGeneration = (gameState: GameState): GameState => {
       )
 
       if (cellState) {
-        return adjacentCellsSum < 2 ? 0 : 1
+        if (adjacentCellsSum < 2 || adjacentCellsSum > 3) {
+          return 0
+        } else {
+          return 1
+        }
       }
 
       return 0

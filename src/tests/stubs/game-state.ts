@@ -10,3 +10,14 @@ export const caseUnderpopulation: Record<string, GameState> = {
     [0, 0],
   ],
 }
+
+export const caseOvercrowding: Record<string, GameState> = {
+  initial: [
+    [1, 1, 1],
+    [1, 1, 1],
+  ],
+  expected: [
+    [1, 0, 1],
+    [1, 0, 1],
+  ],
+}
