@@ -20,6 +20,7 @@ export const CellItem = styled(GridItem)`
   border-width: ${theme.sizes["0.5"]};
   border-color: ${theme.colors.blue[300]};
   border-radius: ${theme.sizes["1"]};
+  transition: background-color 0.7s ease;
   ${({ status }) =>
     css`
       background: ${status ? theme.colors.green[300] : theme.colors.white};

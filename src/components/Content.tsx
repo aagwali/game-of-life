@@ -1,13 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Button, Grid, VStack } from "@chakra-ui/react"
 
-import { generateRandomGameState } from "../privates"
+import { generateRandomGameState, setNextGeneration } from "../privates"
 import { CellItem } from "./styles"
 
 import type { GameContentProps } from "./types"
 const GameContent = ({ gameState }: GameContentProps) => {
   const [currentGameState, setCurrentGameState] = useState(gameState)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentGameState(setNextGeneration(currentGameState))
+    }, 175)
+    return () => clearTimeout(timer)
+  }, [currentGameState])
 
   return (
     <VStack spacing={12}>

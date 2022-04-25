@@ -7,8 +7,8 @@ const generateArray = (count: number): number[] =>
   Array.from(Array(count).keys())
 
 export const generateRandomGameState = (): GameState => {
-  const rowCount = randomIntBetween(10, 20)
-  const columnCount = randomIntBetween(10, 20)
+  const rowCount = randomIntBetween(10, 30)
+  const columnCount = randomIntBetween(10, 60)
 
   const gameState = generateArray(rowCount)
     .map(() => generateArray(columnCount))
