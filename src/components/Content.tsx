@@ -1,11 +1,11 @@
 import { useState } from "react"
 
-import { Button, VStack } from "@chakra-ui/react"
+import { Button, Grid, VStack } from "@chakra-ui/react"
 
 import { generateRandomGameState } from "../privates"
+import { CellItem } from "./styles"
 
 import type { GameContentProps } from "./types"
-
 const GameContent = ({ gameState }: GameContentProps) => {
   const [currentGameState, setCurrentGameState] = useState(gameState)
 
@@ -16,6 +16,14 @@ const GameContent = ({ gameState }: GameContentProps) => {
         colorScheme={"blue"}
         children={"Generate"}
       />
+      <Grid
+        templateColumns={`repeat(${currentGameState[0].length}, 1fr)`}
+        gap={0.5}
+      >
+        {currentGameState.flat().map((cell, index) => (
+          <CellItem key={index} status={cell} />
+        ))}
+      </Grid>
     </VStack>
   )
 }
