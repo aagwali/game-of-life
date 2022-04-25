@@ -44,8 +44,9 @@ export const setNextGeneration = (gameState: GameState): GameState => {
 
       if (cellState) {
         return adjacentCellsSum === 2 || adjacentCellsSum === 3 ? 1 : 0
+      } else {
+        return adjacentCellsSum === 3 ? 1 : 0
       }
-      return 0
     })
   )
 

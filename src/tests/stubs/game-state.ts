@@ -2,12 +2,12 @@ import type { GameState } from "../../components/types"
 
 export const caseUnderpopulation: Record<string, GameState> = {
   initial: [
-    [1, 0, 1],
-    [1, 0, 0],
+    [1, 0, 0, 1],
+    [1, 0, 0, 0],
   ],
   expected: [
-    [0, 0, 0],
-    [0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
   ],
 }
 
@@ -30,5 +30,16 @@ export const caseStayAlive: Record<string, GameState> = {
   expected: [
     [1, 1, 0],
     [1, 0, 0],
+  ],
+}
+
+export const caseBecomeAlive: Record<string, GameState> = {
+  initial: [
+    [0, 1],
+    [1, 1],
+  ],
+  expected: [
+    [1, 1],
+    [1, 1],
   ],
 }
