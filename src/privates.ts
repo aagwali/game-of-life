@@ -1,4 +1,4 @@
-import { CellState, GameState } from "./components/types"
+import type { CellState, GameState } from "./components/types"
 
 const getCellAt = (
   [row, column]: [number, number],

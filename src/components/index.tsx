@@ -1,7 +1,10 @@
+import Header from "./Header"
 import { AppCanvas } from "./styles"
 
-const App = () => {
-  return <AppCanvas>Empty React App</AppCanvas>
-}
+const App = () => (
+  <AppCanvas>
+    <Header />
+  </AppCanvas>
+)
 
 export default App
